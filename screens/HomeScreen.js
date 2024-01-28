@@ -8,6 +8,7 @@ import {
   Image,
   StyleSheet,
   TextInput,
+  ScrollView,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import * as Location from "expo-location";
@@ -15,6 +16,8 @@ import style from "../assets/styles/css/style.css";
 import { Ionicons } from "@expo/vector-icons";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
+import DressItem from "../components/DressItem";
+import { StatusBar } from "expo-status-bar";
 
 const HomeScreen = () => {
   const [locationServicesEnabled, setlocationServicesEnabled] = useState(false);
@@ -84,13 +87,60 @@ const HomeScreen = () => {
     }
   };
 
+  const services = [
+    {
+      id: 0,
+      image: 'https://cdn-icons-png.flaticon.com/128/343/343285.png',
+      name: "T-Shirt",
+      qty: 0,
+      price: '500 F CFA'
+    },
+    {
+      id: 1,
+      image: 'https://cdn-icons-png.flaticon.com/128/11070/11070035.png',
+      name: "Chemise",
+      qty: 0,
+      price: '500 F CFA'
+    },
+    {
+      id: 2,
+      image: 'https://cdn-icons-png.flaticon.com/128/817/817273.png',
+      name: "Lacost",
+      qty: 0,
+      price: '750 F CFA'
+    },
+    {
+      id: 3,
+      image: 'https://cdn-icons-png.flaticon.com/128/2806/2806182.png',
+      name: "Pantalon",
+      qty: 0,
+      price: '1000 F CFA'
+    },
+    {
+      id: 4,
+      image: 'https://cdn-icons-png.flaticon.com/128/2149/2149715.png',
+      name: "Jeans",
+      qty: 0,
+      price: '1000 F CFA'
+    },
+    {
+      id: 5,
+      image: 'https://cdn-icons-png.flaticon.com/128/12883/12883364.png',
+      name: "Jogging",
+      qty: 0,
+      price: '850 F CFA'
+    },
+  ]
+
   return (
-    <SafeAreaView style={{backgroundColor:'#f0f0f0'}}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor:'#f0f0f0'}}>
+      <StatusBar backgroundColor="#E0115F" style="light"/>
+      {/* Header content */}
       <View style={styles.header}>
         <Ionicons name="location-sharp" size={24} color="black" />
         <View>
-          <Text style={{ fontSize: 18, fontWeight: "600" }}>Adresse</Text>
-          <Text>{displayCurrentAddress}</Text>
+          {/* <Text >Adresse</Text> */}
+          <Text style={{ fontSize: 15, fontWeight: "400" }}>{displayCurrentAddress}</Text>
         </View>
         <TouchableOpacity>
           <Image
@@ -101,15 +151,22 @@ const HomeScreen = () => {
           />
         </TouchableOpacity>
       </View>
+      {/* Search box */}
       <View style={styles.searchSection}>
         <TextInput placeholder="Rechercher un article" />
         <Ionicons name="search-sharp" size={24} color="black" />
       </View>
-        <Carousel/>
-        <Services/>
+      {/* Carousel */}
+      <Carousel/>
+      {/* Services */}
+      <Services/>
+      {/* Products list */}
+      {services.map((item, index) => (
+        <DressItem item={item} key={index} />
+      ))}
       <View>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -120,17 +177,18 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginHorizontal: 10,
-        marginTop: 10,
+        marginHorizontal: 7,
+        marginTop: 15,
         backgroundColor: "#E0115F",
         paddingHorizontal: 5,
         borderRadius: 30,
+        paddingVertical:1
     },
 
     searchSection: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginHorizontal: 30,
+        marginHorizontal: 7,
         marginTop: 10,
         backgroundColor:'#E0115F',
         borderRadius:10,

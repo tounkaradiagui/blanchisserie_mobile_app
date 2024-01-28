@@ -5,33 +5,33 @@ const Services = () => {
     const services = [
         {
             id:0,
-            image: 'https://images.pexels.com/photos/5901622/pexels-photo-5901622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            image: 'https://cdn-icons-png.flaticon.com/128/8331/8331476.png',
             name: "Lavage"
         },
         {
             id:2,
-            image: 'https://images.pexels.com/photos/5901622/pexels-photo-5901622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            name: "Lavage"
+            image: 'https://images.pexels.com/photos/8774444/pexels-photo-8774444.jpeg?auto=compress&cs=tinysrgb&w=600',
+            name: "Machine"
         },
         {
             id:3,
-            image: 'https://images.pexels.com/photos/5901622/pexels-photo-5901622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            name: "Lavage"
+            image: 'https://images.pexels.com/photos/4376052/pexels-photo-4376052.jpeg?auto=compress&cs=tinysrgb&w=600',
+            name: "Répassage"
         },
         {
             id:4,
-            image: 'https://images.pexels.com/photos/5901622/pexels-photo-5901622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            image: 'https://images.pexels.com/photos/4386143/pexels-photo-4386143.jpeg?auto=compress&cs=tinysrgb&w=600',
             name: "Lavage"
         },
         {
             id:5,
-            image: 'https://images.pexels.com/photos/5901622/pexels-photo-5901622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            name: "Lavage"
+            image: 'https://images.pexels.com/photos/5202799/pexels-photo-5202799.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+            name: "Fer à répasser"
         },
         {
             id:6,
-            image: 'https://images.pexels.com/photos/5901622/pexels-photo-5901622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            name: "Lavage"
+            image: 'https://images.pexels.com/photos/7641396/pexels-photo-7641396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            name: "Fer"
         },
     ]
   return (
